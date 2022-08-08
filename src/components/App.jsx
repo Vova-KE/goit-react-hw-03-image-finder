@@ -76,7 +76,7 @@ export class App extends Component {
     return (
       <div>
         <SearchBar onSubmit={this.handleSearchSubmit} />
-        <Loader />
+        {isLoading && <Loader />}
         <ImageGallery photos={photos} />
         {isVisible && <Button onClick={this.handleLoadMore} isLoading={isLoading} />}
         {/* <Modal /> */}
