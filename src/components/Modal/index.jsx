@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import styles from './styles.module.css';
 
 class Modal extends Component {
@@ -32,6 +33,12 @@ class Modal extends Component {
             </div>
         </div>
     )}
+};
+
+Modal.propTypes = {
+    onModalClose: PropTypes.func.isRequired,
+    modalPhoto: PropTypes.string.isRequired,
+    tags: PropTypes.string,
 };
 
 export default Modal;
