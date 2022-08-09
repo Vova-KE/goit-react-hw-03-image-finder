@@ -15,7 +15,7 @@ class SearchBar extends Component {
         event.preventDefault();
         
         if (this.state.inputQuery.trim() === '') {
-            toast.error('Введите текст запроса');
+            toast.error('Enter a request');
             return;
         };
         

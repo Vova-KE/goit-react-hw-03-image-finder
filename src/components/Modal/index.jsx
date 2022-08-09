@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import { createPortal } from 'react-dom';
 import styles from './styles.module.css';
-
-const modalRoot = document.querySelector('#modal-root');
 
 class Modal extends Component {
     componentDidMount() {
@@ -15,26 +12,25 @@ class Modal extends Component {
 
     handleEscapeCloseModal = event => {
         if (event.code === 'Escape') {
-            this.props.onClose();
+            this.props.onModalClose();
         }
     };
 
     handleBackDropClick = event => {
         if (event.target === event.currentTarget) {
-            this.props.onClose();
+            this.props.onModalClose();
         }
     };
 
     render() {
-        const { largeImageURL, tags } = this.props;
+        const { modalPhoto, tags } = this.props;
 
-        return createPortal(
-        <div class={styles.overlay} onClick={this.handleBackDropClick}>
-            <div class={styles.modal}>
-                <img src={largeImageURL} alt={tags} />
+        return (
+        <div className={styles.overlay} onClick={this.handleBackDropClick}>
+            <div className={styles.modal}>
+                <img src={modalPhoto} alt={tags} />
             </div>
-        </div>,
-        modalRoot
+        </div>
     )}
 };
 
