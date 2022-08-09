@@ -1,17 +1,20 @@
-import { Audio } from  'react-loader-spinner'
+import { Bars } from  'react-loader-spinner'
 // import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import styles from './styles.module.css';
 
 const Loader = () => {
     return (
-        <Audio
-            height = "800"
-            width = "800"
-            radius = "9"
-            color = 'green'
-            ariaLabel = 'three-dots-loading'     
-            wrapperStyle
-            wrapperClass
-        />
+        <div className={styles.loaderWrap}>
+            <Bars
+                height="80"
+                width="80"
+                color="#4fa94d"
+                ariaLabel="bars-loading"
+                wrapperStyle={{}}
+                wrapperClass=""
+                visible={true}
+            />
+        </div>
     )
 };
 
